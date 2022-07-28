@@ -1,16 +1,26 @@
 import { Button } from "@mui/material";
+import ImgBottom from "./images/bottom.png"
+import ImgTop from "./images/top.png"
+import HomePage from "./components/HomePage";
+import QuizPage from "./components/QuizPage";
 
 function App() {
   return (
-    <div className="bg-primary-light h-[100vh] w-[100vw] flex justify-center items-center" >
-      <div className="text-center leading-10">
-        <h1 className="text-4xl font-bold text-primary">Quizzical</h1>
-        <p className="text-primary font-bold">Check Your General Knowledge.</p>
-        <Button sx={{
-          bgcolor: "#4D5B9E", "&:hover": {
-          bgcolor: "#4D5B9E",
-        }}} variant="contained" size="small">Start Quiz</Button>
-     </div>
+    <div className="h-[100vh] w-[100vw]">
+
+      {/* Page One Start  */}
+      {/* <HomePage />  */}
+      {/* Page One End  */}
+      {/* Page Two Start  */}
+      <QuizPage />
+      {/* Page Two End  */}
+
+      <div className="fixed z-10 bottom-[-8%] left-[-5%]">
+        <img src={ImgBottom} alt="" />
+      </div>
+      <div className="fixed z-10 top-0 right-0">
+        <img src={ImgTop} alt="" />
+      </div>
     </div>
   );
 }
