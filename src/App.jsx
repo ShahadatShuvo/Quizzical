@@ -10,8 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Collapse from '@mui/material/Collapse';
 
-
-
 function App() {
   const [check, setCheck] = React.useState([]);
   const unique = [...new Set(check)];
@@ -20,11 +18,6 @@ function App() {
   const [questionsList, setQuestionsList] = React.useState([]);
   const [questionObject, setQuestionObject] = React.useState([]);
   const [open, setOpen] = React.useState(true);
-
-
-  // console.log("questionsList:", questionsList);
-  // console.log("check:", check);
-  console.log("Unique:", unique);
 
   const [quizPage, setQuizPage] = React.useState("home");
 
