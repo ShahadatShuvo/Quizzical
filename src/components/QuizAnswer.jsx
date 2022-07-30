@@ -4,17 +4,17 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 function QuizAnswer({ setQuizPage, questionsList }) {
     console.log("questionsList:", questionsList);
-
     return (
         <div className="relative z-30 h-full w-full flex justify-center items-center" >
             <Scrollbars style={{ maxWidth: "70vw", maxHeight: "80vh" }}>
                 <div className='my-3'>
                     {questionsList.map((question, index) => <div key={index} className='text-primary'>
-                        <h3 className='mt-2 text-lg font-bold tracking-wide'>{question.question} </h3>
+                        <h3 className='mt-2 text-lg font-bold tracking-wide'>{index + 1}. {question.question} </h3>
                         <div className='pt-3 pb-5 border-b border-primary-light'>
-                            {/* {question.shuffledArray.map((option, index) =>
+                            {question.shuffledArray.map((option, pos) =>
                             (
-                                <span className="border border-[#D6DBF5] px-3 py-1 mr-3 rounded-full">Cabbage Patch Kids</span>))} */}
+                                <span key={pos}
+                                    className={question.clicked_index === pos ? "inline-block border border-[#D6DBF5] px-3 py-1 mr-3 my-1 rounded-full bg-red-200 " : "inline-block border border-[#D6DBF5] px-3 py-1 mr-3 my-1 rounded-full"}>{option}</span>))}
                         </div>
                     </div>)}
                     <div className="mt-5 flex justify-center items-center">
