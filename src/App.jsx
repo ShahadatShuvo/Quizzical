@@ -69,7 +69,7 @@ function App() {
 
   const displaySingleQuestion = data.map((question, index) => {
     return (<SingleQuestion key={index}
-      question={question} pos={index} questionObject={questionObject} setQuestionObject={setQuestionObject} />)
+      question={question} pos={index} setQuestionObject={setQuestionObject} />)
   })
 
   function onHandleClick() {

@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SingleQuestion({ question, pos, questionObject, setQuestionObject }) {
+function SingleQuestion({ question, pos, setQuestionObject }) {
 
-    const options = [question.correct_answer, ...question.incorrect_answers];
+    const [options, setOptions] = React.useState([question.correct_answer, ...question.incorrect_answers]);
     const [shuffledArray, setShuffledArray] = React.useState([]);
 
     const [optionChoose, setOptionChoose] = React.useState(null);
@@ -20,7 +20,7 @@ function SingleQuestion({ question, pos, questionObject, setQuestionObject }) {
             return array;
         }
         shuffleArray(options).then(data => setShuffledArray(data));
-    }, [question])
+    }, [question, options])
 
     function onOptionClick(index, ans) {
         const newQuestionOnj = {
