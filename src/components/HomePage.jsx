@@ -1,7 +1,11 @@
 import { Button } from '@mui/material'
 import React from 'react'
 
-function HomePage() {
+function HomePage({ setQuizPage, fetchQuiz }) {
+    function onHandleClick() {
+        setQuizPage("quiz")
+        fetchQuiz();
+    }
     return (
         <div className="z-30 h-full w-full flex justify-center items-center" >
             <div className="text-center leading-10">
@@ -11,7 +15,7 @@ function HomePage() {
                     bgcolor: "#4D5B9E", "&:hover": {
                         bgcolor: "#4D5B9E",
                     }
-                }} variant="contained" size="small">Start Quiz</Button>
+                }} variant="contained" size="small" onClick={onHandleClick}>Start Quiz</Button>
             </div>
         </div>
     )
