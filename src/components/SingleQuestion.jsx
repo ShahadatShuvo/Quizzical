@@ -26,14 +26,14 @@ function SingleQuestion({ question, pos, setQuestionObject }) {
     }, [question, options])
 
     function onOptionClick(index, ans) {
-        const newQuestionOnj = {
+        const newQuestionObj = {
             index: pos,
             correct_answer: question.correct_answer,
             clicked_answer: shuffledArray[index],
             clicked_index: index,
             shuffledArray: shuffledArray,
         }
-        setQuestionObject(newQuestionOnj);
+        setQuestionObject(newQuestionObj);
         setOptionChoose(index)
     }
     return (
