@@ -19,7 +19,7 @@ function SingleQuestion({ question, pos, questionObject, setQuestionObject }) {
             }
             return array;
         }
-        const Shuffle = shuffleArray(options).then(data => setShuffledArray(data));
+        shuffleArray(options).then(data => setShuffledArray(data));
     }, [question])
 
     function onOptionClick(index, ans) {
