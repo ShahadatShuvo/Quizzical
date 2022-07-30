@@ -3,11 +3,13 @@ import React from 'react'
 function SingleQuestion({ question, pos, setQuestionObject }) {
 
     const [options, setOptions] = React.useState([]);
-    setOptions([question.correct_answer, ...question.incorrect_answers]);
     const [shuffledArray, setShuffledArray] = React.useState([]);
 
     const [optionChoose, setOptionChoose] = React.useState(null);
 
+    React.useMemo(() => {
+        setOptions([question.correct_answer, ...question.incorrect_answers]);
+    }, [question.correct_answer, question.incorrect_answers])
 
     React.useEffect(() => {
         async function shuffleArray(array) {
